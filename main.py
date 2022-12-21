@@ -77,6 +77,7 @@ while chatting.lower() != "goodbye":
         ] 
         return random.choice(hints)
       if favorite_tv.lower() == "chuck":
+        count += 1
         print(f"\nYou got it! {favorite_tv.capitalize()} is the BEST! That took you {count} guess(es). Good job!")
         break
       elif favorite_tv.lower() == "goodbye":
@@ -95,15 +96,20 @@ while chatting.lower() != "goodbye":
     break
 # code from chatbot0.1 
   if __name__ == "__main__":
-    user_input = ''
+    user_input = ""
     quit_word = "goodbye"  
     user_input = input("\nTell me something about you: ")
     while user_input:
       if user_input.lower() == quit_word:
         break
+      elif user_input == "":
+        break
       else:
         user_input = input("\n" + generate_response(user_input) + "\n" + "\n")
   if user_input.lower() == "goodbye":
+    break
+  if user_input == "":
+    print("\nAbsolutley speechless. :)")
     break
   
 #-----------------End of Conversation--------------------------
