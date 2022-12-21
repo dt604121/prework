@@ -28,7 +28,6 @@ while chatting.lower() != "goodbye":
   print("\nUmmmmm.......................so............")
 
 # code from C2C-Elite101-Prework-Part3
-
   user_status = input(f"\n...This is awkward..so..well {user_name.capitalize()}, how are you doing? ")
   status = user_status.lower()
   if status == "goodbye":
