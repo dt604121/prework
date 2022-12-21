@@ -1,8 +1,20 @@
-#-----------------Imports/Other--------------------------
+#-----------------Imports/Other/Functions--------------------------
 import random
-keep_chatting = True
+chatting = ''
+# code from chatbot0.1 
+def generate_response(user_input):
+  responses = [
+    "How interesting!",
+    "You don't say!",
+    "Very cool!",
+    "Hmm..",
+    "Nice!",
+    "Ah. Okay",
+    "Wow."
+      ] 
+  return random.choice(responses)
 #-----------------Chatbot--------------------------
-while keep_chatting == True:
+while chatting.lower() != "goodbye":
   print("Hello! I'm  chatbot.")
   chatting = input("\nWould you like chat with me? If not, just tell me 'goodbye'! ")
   if chatting.lower() == "goodbye":
@@ -82,31 +94,17 @@ while keep_chatting == True:
   if more_talk.lower() == "goodbye":
     break
 # code from chatbot0.1 
-  def generate_response(user_input):
-    responses = [
-      "How interesting!",
-      "You don't say!",
-      "Very cool!",
-      "Hmm..",
-      "Nice!",
-      "Ah. Okay",
-      "Wow."
-        ] 
-    return random.choice(responses)
-  
-  def init_chat():
-    quit_word = "goodbye"
-      
-    user_input = input("\nTell me something about you: ")
-  
-    while user_input != quit_word:
-      user_input = input("\n" + generate_response(user_input) + "\n" + "\n")
-  # break out of main while loop to keep_chatting 
-  if favorite_tv.lower() == "goodbye":
-    break   
-    
   if __name__ == "__main__":
-    init_chat()
-
+    user_input = ''
+    quit_word = "goodbye"  
+    user_input = input("\nTell me something about you: ")
+    while user_input:
+      if user_input.lower() == quit_word:
+        break
+      else:
+        user_input = input("\n" + generate_response(user_input) + "\n" + "\n")
+  if user_input.lower() == "goodbye":
+    break
+  
 #-----------------End of Conversation--------------------------
 print("\nIt was nice chatting with you. Talk to you next time! :)")
